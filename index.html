@@ -21,11 +21,16 @@
                 <p>Breathe. Grow. Live.</p>
             </div>
             <div class="yoga-aside aside2">
-                <p> In yoga.</p>
+                <p>In yoga.</p>
             </div>
         </div>
         <nav class="menu">
-            <ul class="menu-list">
+            <button aria-expanded="false" aria-controls="menu-list">
+                <span class="open">☰</span>
+                <span class="close">×</span>
+                Menu
+            </button>
+            <ul id="menu-list">
                 <li>
                     <a href="">Yoga</a>
                 </li>
@@ -39,7 +44,7 @@
                     <a href="">About</a>
                 </li>
                 <li>
-                    <a href="">Gallery</a>
+                    <a href="#gal">Gallery</a>
                 </li>
             </ul>
         </nav>
@@ -85,7 +90,7 @@
                     any work (strength).</p>
             </div>
         </section>
-        <section class="gallery">
+        <section class="gallery" id="gal">
             <h2>Yoga Gallery</h2>
             <img src="https://source.unsplash.com/GaprWyIw66o/250x250" alt="">
             <img src="https://source.unsplash.com/dlxNvA7pVwU/250x250" alt="">
@@ -102,6 +107,7 @@
                     someone@example.com</a>.</p>
         </div>
     </footer>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

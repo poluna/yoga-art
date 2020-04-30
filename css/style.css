@@ -93,9 +93,13 @@ body {
     grid-gap: 5px;
 }
 
-.menu-list {
+#menu-list {
     padding: 0;
     margin: 0;
+}
+
+[aria-controls="menu-list"] {
+    display: none;
 }
 
 .menu a {
@@ -112,6 +116,14 @@ body {
 
 .menu a:hover {
     background: var(--dark-green);
+}
+
+.menu button {
+    background: var(--dark-green);
+    width:100%;
+    font-size: 1.5em;
+    border:none;
+    padding:6px;
 }
 
 /* Section About */
@@ -202,4 +214,63 @@ h2 {
     background: var(--dark-green);
     color: white;
     text-align: center;
+}
+
+@media (max-width: 850px) {
+    .menu {
+        order: -1;
+    }
+    [aria-controls="menu-list"] {
+        display: block;
+    }
+
+    .menu ul {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+
+    .top {
+        margin-top: -10px;
+    }
+
+    [aria-expanded="true"] ~ ul{
+        display: grid;
+        max-height: 500px;
+    }
+
+    [aria-expanded="false"] .close {
+        display: none;
+    }
+
+    [aria-expanded="true"] .close {
+        display: inline-block;
+    }
+
+    [aria-expanded="true"] .open {
+        display: none;
+    }
+}
+
+@media (max-width: 750px) {
+    .top {
+        grid-template-areas: 
+            "yoga-header yoga-header"
+            "aside1 aside2";
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .top {
+        grid-template-areas: 
+            "yoga-header"
+            "aside1"
+            "aside2";
+    }
 }
