@@ -21,13 +21,14 @@ body {
 .top {
     display: grid;
     grid-template-areas:
-        "yoga-header yoga-header aside1"
-        "yoga-header yoga-header aside2";
+        "yoga-header yoga-header"
+        "slogan1 slogan2";
 }
 
 .top h1 {
-    font-size: 2.7em;
-    margin: 10px;
+    font-size: 5em;
+    color: rgb(58, 58, 58);
+    font-weight: 400;
 }
 
 /* .top p {
@@ -35,14 +36,15 @@ body {
     margin: 5px;
 } */
 
-.top img {
-    max-width: 100%;
-}
+/* .top img {
+    max-height: 100%;
+} */
 
 .yoga-header {
     grid-area: yoga-header;
-    min-height: 360px;
-    background: var(--main-color) url("../images/yoga.jpg");
+    min-height: 40vh;
+    background-color: var(--main-color);
+    background-image: url("../images/yoga.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -60,25 +62,26 @@ body {
     height: 150px;
 }
 
-.yoga-aside {
+.yoga-slogan {
     display: grid;
     align-items: center;
     justify-items: center;
     /* align-content: center; */
 }
 
-.yoga-aside p {
+.yoga-slogan p {
     font-size: 2em;
 }
 
-.aside1 {
-    grid-area: aside1;
+.slogan1 {
+    grid-area: slogan1;
     background: rgba(190, 178, 162, 0.527);
 }
 
-.aside2 {
-    grid-area: aside2;
-    background: var(--main-color) url("../images/leaf.jpg");
+.slogan2 {
+    grid-area: slogan2;
+    background-color: var(--main-color);
+    background-image: url("../images/leaf.jpg");
     background-size: cover;
     background-position: center;
     font-weight: 700;
@@ -255,22 +258,18 @@ h2 {
 }
 
 @media (max-width: 750px) {
-    .top {
-        grid-template-areas: 
-            "yoga-header yoga-header"
-            "aside1 aside2";
-    }
+
 
     .about {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
     .top {
         grid-template-areas: 
             "yoga-header"
-            "aside1"
-            "aside2";
+            "slogan1"
+            "slogan2";
     }
 }
